@@ -5,30 +5,32 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <div class=" items-contact">
-                        <div class="section-head">
-                            <h2 class="section-title ">We're Here</h2>
-                            <p class="section-desc mb-0">Mon-Fri 8:00am - 5:00pm</p>
-                        </div>
-                        <div class="col-lg-12">
-                            <div class="contact-item">
-                                <h6>Phone Number</h6>
-                                <p class="contact-item-info">031-99535177</p>
+                    @foreach ($contacts as $contact)
+                        <div class=" items-contact">
+                            <div class="section-head">
+                                <h2 class="section-title ">We're Here</h2>
+                                <p class="section-desc mb-0">{{ $contact->time }}</p>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="contact-item">
+                                    <h6>Phone Number</h6>
+                                    <p class="contact-item-info">{{ $contact->phone }}</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="contact-item">
+                                    <h6>Email Adress</h6>
+                                    <p class="contact-item-info">{{ $contact->email }}</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="contact-item">
+                                    <h6>Local Adress</h6>
+                                    <p class="contact-item-info">{{ $contact->location }}</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-lg-12">
-                            <div class="contact-item">
-                                <h6>Email Adress</h6>
-                                <p class="contact-item-info">info@primakom.co.id</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-12">
-                            <div class="contact-item">
-                                <h6>Local Adress</h6>
-                                <p class="contact-item-info">Jl. Jombang Raya Ruko Emerald Boulevard Office Park Blok AA 2 No.52 Pondok Aren Kota Tangerang Selatan</p>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
                 <div class="col-lg-6">
                     <form class="contact-form">
@@ -45,8 +47,7 @@
 
                         <div class="form-group">
                             <label>Your Name</label>
-                            <input name="email" placeholder="ayoub " class="form-control has-style1" id="how"
-                                type="text">
+                            <input name="email" placeholder="ayoub " class="form-control has-style1" id="how" type="text">
                         </div>
                         <div class="form-group">
                             <label>Email</label>
